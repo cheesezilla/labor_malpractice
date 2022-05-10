@@ -1,7 +1,7 @@
 <!--  [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 # Labour Malpractice Model
-A simple app that predicts 
+A simple app that predicts probability of whether a deal between 2 companies ends up being an alliance or otherwise.
 
 <!--
 Here's why:
@@ -38,7 +38,7 @@ To deploy to heroku:
 
 ### Getting Started
 
-Go to the url above and have fun
+Go to the url above, enter the parameters then click submit to get prediction results. 
 
 ### Prerequisites
 
