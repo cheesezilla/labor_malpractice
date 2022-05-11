@@ -1,268 +1,475 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Checkout example · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
-
-    
-
-    <!-- Bootstrap core CSS -->
-<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
-    
-<div class="container">
-  <main>
-    <div class="py-5 text-center">
-<!--      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
-      <h2>Checkout form</h2>
-      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Your cart</span>
-          <span class="badge bg-primary rounded-pill">3</span>
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Product name</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$12</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Second product</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$8</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Third item</h6>
-              <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between bg-light">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>EXAMPLECODE</small>
-            </div>
-            <span class="text-success">−$5</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (USD)</span>
-            <strong>$20</strong>
-          </li>
-        </ul>
-
-        <form class="card p-2">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Promo code">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </form>
-      </div>
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate>
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="username" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-              <div class="invalid-feedback">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
-
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
-
-          <hr class="my-4">
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
-
-          <hr class="my-4">
-
-          <h4 class="mb-3">Payment</h4>
-
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
-          </div>
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-muted">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div>
-
-          <hr class="my-4">
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2021 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <title>Labor Controversy Risk</title>
+</head>
+<body>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<h1>Labor Controversies Calculator</h1>
 
-      <script src="form-validation.js"></script>
-  </body>
+    <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past year?<br>(1: Least Volatile, 5: Most Volatile) </label><br>
+    <input type="number" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5">  <br>
+
+    <label for="LSC">Number of Controversies involving Direct Suppliers in past year</label><br>
+    <input type="number" id="LSC" name="LSC" value="0">  <br>
+
+    <label for="LDV">Was your firm involved in labor controversies in the past year?</label><br>
+    <select id="LDV" name="Sector">
+        <option value=0>No</option>
+        <option value=1>Yes</option>
+    </select><br>
+
+    <label for="LE">How many employees does your firm hire? </label><br>
+    <input type="number" id="LE" name="LE" value="100" step="1" min="1" >  <br>
+
+    <label for="LDI">How many days of inventory does your firm typically hold on average? </label><br>
+    <input type="number" id="LDI" name="LDI" step="0.00001" value="100" min="0" >  <br>
+
+    <label for="LSQCK">What was the quick ratio of your firm in the past year? </label><br>
+    <input type="number" id="LSQCK" name="LSQCK" step="0.00001" value="0.5"  min="0" >  <br>
+
+
+    <label for="LSG">What was the overhead cost per employee in the past year? </label><br>
+    <input type="number" id="LSG" name="LSG" step="1" value="1000"  min="500" >  <br>
+
+    <label for="LOpMar">What was the operating margin of your firm in the past year? </label><br>
+    <input type="number" id="LOpMar" name="LOpMar" step="0.00001" value="0.5"  min="0" >  <br>
+
+    <label for="Sector">Which of the following Industry Sectors most closely describes your company?</label><br>
+    <select id="Sector" name="Sector">
+        <option value="1">Communication Services</option>
+        <option value="2">Consumer Discretionary</option>
+        <option value="3">Consumer Staples</option>
+        <option value="4">Energy</option>
+        <option value="5">Financials</option>
+        <option value="6">Healthcare</option>
+        <option value="7">Information Technology</option>
+        <option value="8">Materials</option>
+        <option value="9">Real Estate</option>
+        <option value="10">Industrials</option>
+    </select><br>
+
+    <label for="HQ">Which of the following country is your company headquartered in?</label><br>
+    <select id="HQ" name="HQ" value=0>
+        <option value=0>	Others	</option>
+        <option value=1>Afghanistan</option>
+        <option value=2>Albania</option>
+        <option value=3>Algeria</option>
+        <option value=4>Angola</option>
+        <option value=5>Argentina</option>
+        <option value=6>Armenia</option>
+        <option value=7>Australia</option>
+        <option value=8>Austria</option>
+        <option value=9>Azerbaijan</option>
+        <option value=10>Bahrain</option>
+        <option value=11>Bangladesh </option>
+        <option value=12>Barbados</option>
+        <option value=13>Belarus</option>
+        <option value=14>Belgium</option>
+        <option value=15>Belize</option>
+        <option value=16>Benin</option>
+        <option value=17>Bhutan</option>
+        <option value=18>Bolivia</option>
+        <option value=19>Bosnia and Herzegovina</option>
+        <option value=20>Botswana</option>
+        <option value=21>Brazil</option>
+        <option value=22>Brunei Darussalam</option>
+        <option value=23>Bulgaria</option>
+        <option value=24>Burkina Faso</option>
+        <option value=25>Burma</option>
+        <option value=26>Burundi</option>
+        <option value=27>Cabo Verde</option>
+        <option value=28>Cambodia</option>
+        <option value=29>Cameroon</option>
+        <option value=30>Canada</option>
+        <option value=31>Central African Republic</option>
+        <option value=32>Chad</option>
+        <option value=33>Chile</option>
+        <option value=34>China</option>
+        <option value=35>Colombia</option>
+        <option value=36>Comoros</option>
+        <option value=37>Costa Rica</option>
+        <option value=38>CÃ´te d'Ivoire</option>
+        <option value=39>Croatia</option>
+        <option value=40>Cuba</option>
+        <option value=41>Cyprus</option>
+        <option value=42>Czech Republic</option>
+        <option value=43>Democratic Republic of Congo</option>
+        <option value=44>Denmark</option>
+        <option value=45>Djibouti</option>
+        <option value=46>Dominica</option>
+        <option value=47>Dominican Republic</option>
+        <option value=48>Ecuador</option>
+        <option value=49>Egypt</option>
+        <option value=50>El Salvador</option>
+        <option value=51>Equatorial Guinea</option>
+        <option value=52>Eritrea</option>
+        <option value=53>Estonia</option>
+        <option value=54>Eswatini</option>
+        <option value=55>Ethiopia</option>
+        <option value=56>Fiji</option>
+        <option value=57>Finland</option>
+        <option value=58>France</option>
+        <option value=59>Gabon</option>
+        <option value=60>Georgia</option>
+        <option value=61>Germany</option>
+        <option value=62>Ghana</option>
+        <option value=63>Greece</option>
+        <option value=64>Guatemala</option>
+        <option value=65>Guinea</option>
+        <option value=66>Guinea-Bissau</option>
+        <option value=67>Guyana</option>
+        <option value=68>Haiti</option>
+        <option value=69>Honduras</option>
+        <option value=70>Hungary</option>
+        <option value=71>Iceland</option>
+        <option value=72>India</option>
+        <option value=73>Indonesia</option>
+        <option value=74>Iran</option>
+        <option value=75>Iraq</option>
+        <option value=76>Ireland</option>
+        <option value=77>Israel</option>
+        <option value=78>Italy</option>
+        <option value=79>Jamaica</option>
+        <option value=80>Japan</option>
+        <option value=81>Jordan</option>
+        <option value=82>Kazakhstan</option>
+        <option value=83>Kenya</option>
+        <option value=84>Kiribati</option>
+        <option value=85>Kosovo</option>
+        <option value=86>Kuwait</option>
+        <option value=87>Kyrgyz Republic</option>
+        <option value=88>Laos</option>
+        <option value=89>Latvia</option>
+        <option value=90>Lebanon</option>
+        <option value=91>Lesotho</option>
+        <option value=92>Liberia</option>
+        <option value=93>Libya</option>
+        <option value=94>Lithuania</option>
+        <option value=95>Luxembourg</option>
+        <option value=96>Madagascar</option>
+        <option value=97>Malawi</option>
+        <option value=98>Malaysia</option>
+        <option value=99>Maldives</option>
+        <option value=100>Mali</option>
+        <option value=101>Malta</option>
+        <option value=102>Mauritania</option>
+        <option value=103>Mauritius</option>
+        <option value=104>Mexico</option>
+        <option value=105>Micronesia</option>
+        <option value=106>Moldova</option>
+        <option value=107>Mongolia</option>
+        <option value=108>Montenegro</option>
+        <option value=109>Morocco</option>
+        <option value=110>Mozambique</option>
+        <option value=111>Namibia</option>
+        <option value=112>Nepal</option>
+        <option value=113>Netherlands</option>
+        <option value=114>New Zealand</option>
+        <option value=115>Nicaragua</option>
+        <option value=116>Niger</option>
+        <option value=117>Nigeria</option>
+        <option value=118>North Korea</option>
+        <option value=119>North Macedonia</option>
+        <option value=120>Norway</option>
+        <option value=121>Oman</option>
+        <option value=122>Pakistan</option>
+        <option value=123>Panama</option>
+        <option value=124>Papua New Guinea</option>
+        <option value=125>Paraguay</option>
+        <option value=126>Peru</option>
+        <option value=127>Philippines</option>
+        <option value=128>Poland</option>
+        <option value=129>Portugal</option>
+        <option value=130>Qatar</option>
+        <option value=131>Republic of Congo</option>
+        <option value=132>Romania</option>
+        <option value=133>Russia</option>
+        <option value=134>Rwanda</option>
+        <option value=135>Saint Lucia</option>
+        <option value=136>Saint Vincent and the Grenadines</option>
+        <option value=137>Samoa</option>
+        <option value=138>SÃ£o TomÃ© and PrÃ­ncipe</option>
+        <option value=139>Saudi Arabia</option>
+        <option value=140>Senegal</option>
+        <option value=141>Serbia </option>
+        <option value=142>Seychelles</option>
+        <option value=143>Sierra Leone</option>
+        <option value=144>Singapore</option>
+        <option value=145>Slovak Republic</option>
+        <option value=146>Slovenia</option>
+        <option value=147>Solomon Islands</option>
+        <option value=148>Somalia</option>
+        <option value=149>South Africa</option>
+        <option value=150>South Korea</option>
+        <option value=151>Spain</option>
+        <option value=152>Sri Lanka</option>
+        <option value=153>Sudan</option>
+        <option value=154>Suriname</option>
+        <option value=155>Sweden</option>
+        <option value=156>Switzerland</option>
+        <option value=157>Syria</option>
+        <option value=158>Taiwan</option>
+        <option value=159>Tajikistan</option>
+        <option value=160>Tanzania</option>
+        <option value=161>Thailand</option>
+        <option value=162>The Bahamas</option>
+        <option value=163>The Gambia</option>
+        <option value=164>Timor-Leste</option>
+        <option value=165>Togo</option>
+        <option value=166>Tonga</option>
+        <option value=167>Trinidad and Tobago</option>
+        <option value=168>Tunisia</option>
+        <option value=169>Turkey</option>
+        <option value=170>Turkmenistan</option>
+        <option value=171>Uganda</option>
+        <option value=172>Ukraine</option>
+        <option value=173>United Arab Emirates</option>
+        <option value=174>United Kingdom</option>
+        <option value=175>United States</option>
+        <option value=176>Uruguay</option>
+        <option value=177>Uzbekistan</option>
+        <option value=178>Vanuatu</option>
+        <option value=179>Venezuela</option>
+        <option value=180>Vietnam</option>
+        <option value=181>Yemen</option>
+
+    </select><br><br>
+
+
+    <button id="submit" onclick="myFunction()"  value="Submit">Submit</button>
+
+
+<p id="Results" style="display:none">Results</p>
+<script>
+    var  HQCoeff= {
+            0:52.4,
+            1:30.3,
+            2:46.1,
+            3:34,
+            4:30.3,
+            5:46.1,
+            6:57.3,
+            7:81.5,
+            8:86.8,
+            9:67.9,
+            10:71.5,
+            11:38,
+            12:52.7,
+            13:58.6,
+            14:84,
+            15:41.8,
+            16:42.5,
+            17:62.6,
+            18:18.7,
+            19:44.1,
+            20:58.6,
+            21:55,
+            22:61.1,
+            23:66.2,
+            24:45.1,
+            25:37.2,
+            26:28,
+            27:44.5,
+            28:39.9,
+            29:38.3,
+            30:84.5,
+            31:23.2,
+            32:27.7,
+            33:70.2,
+            34:62.2,
+            35:59.8,
+            36:34,
+            37:64,
+            38:42.8,
+            39:68.4,
+            40:27.7,
+            41:78.5,
+            42:76.2,
+            43:23,
+            44:86.7,
+            45:42.8,
+            46:51.2,
+            47:51.2,
+            48:39.5,
+            49:51.2,
+            50:39.9,
+            51:27.8,
+            52:24.2,
+            53:81.8,
+            54:48.5,
+            55:23.2,
+            56:60.6,
+            57:91.9,
+            58:82.2,
+            59:24.2,
+            60:66.9,
+            61:78.8,
+            62:49.3,
+            63:55.5,
+            64:43.2,
+            65:32.2,
+            66:39.5,
+            67:44.9,
+            68:12.6,
+            69:45.5,
+            70:65.6,
+            71:87,
+            72:59.2,
+            73:59.4,
+            74:33.5,
+            75:44.8,
+            76:86,
+            77:83.6,
+            78:75.7,
+            79:60.6,
+            80:87.8,
+            81:66.2,
+            82:60.2,
+            83:60.4,
+            84:44.8,
+            85:54.5,
+            86:57.4,
+            87:46,
+            88:38.8,
+            89:74.7,
+            90:42.3,
+            91:41.6,
+            92:29.5,
+            93:16.5,
+            94:78.9,
+            95:85.7,
+            96:33.7,
+            97:46.1,
+            98:85.1,
+            99:44.1,
+            100:34.5,
+            101:68.2,
+            102:26,
+            103:78.4,
+            104:53.4,
+            105:16.5,
+            106:60.6,
+            107:48.1,
+            108:57.8,
+            109:67.5,
+            110:29.5,
+            111:57.1,
+            112:38.1,
+            113:88.9,
+            114:91.3,
+            115:27.8,
+            116:38.8,
+            117:36.8,
+            118:27.7,
+            119:62.6,
+            120:82.4,
+            121:68.7,
+            122:44.9,
+            123:54.5,
+            124:46.1,
+            125:41.6,
+            126:53.3,
+            127:57,
+            128:63.3,
+            129:74.1,
+            130:68.3,
+            131:32.2,
+            132:68.8,
+            133:54.4,
+            134:68.7,
+            135:61.5,
+            136:48.1,
+            137:48.5,
+            138:36.8,
+            139:68.7,
+            140:50.3,
+            141:57.9,
+            142:65.3,
+            143:42.3,
+            144:97.5,
+            145:71.5,
+            146:77.3,
+            147:46.1,
+            148:27.8,
+            149:59.6,
+            150:80.7,
+            151:76.4,
+            152:45.4,
+            153:32.6,
+            154:45.5,
+            155:86.6,
+            156:85.4,
+            157:42.5,
+            158:87.3,
+            159:41.6,
+            160:41.3,
+            161:60,
+            162:48.1,
+            163:41.8,
+            164:37.2,
+            165:44.5,
+            166:48.1,
+            167:52.4,
+            168:53.9,
+            169:61.5,
+            170:27.7,
+            171:44.8,
+            172:48.5,
+            173:80.8,
+            174:87.6,
+            175:79.7,
+            176:68.1,
+            177:57.8,
+            178:53.3,
+            179:7.5,
+            180:51.3,
+            181:16.5
+    };
+    // var LogScore=0;
+    function myFunction(){
+        var LDU4=document.getElementById("LDU4").value;
+        var LSC=document.getElementById("LSC").value;
+        var LDV=document.getElementById("LDV").value;
+        var LE=Math.log(document.getElementById("LE").value);
+        var LSQCK=document.getElementById("LSQCK").value;
+        var LDI=document.getElementById("LDI").value;
+        var LSG=document.getElementById("LSG").value;
+        var LOpMar=document.getElementById("LOpMar").value;
+        var Sector=document.getElementById("Sector").value;
+        var HQ=document.getElementById("HQ").value;
+        var LJE=HQCoeff[HQ];
+        var Year=2022;
+        var Product=LDU4*0.001+LSC*0.002+LDV*0.003+LE*0.004+LJE*0.005+LDI*0.006+LSQCK*0.007+LSG*0.008+LOpMar*0.009+Year*0+0.0011;
+        var LogScore=1/(1+Math.exp(-Product)) ;
+        var Results="Displaying the Results now: Volatility is".concat(" ",LDU4,"/5" );
+        Results=Results.concat("<br>", "Supplier Controversies, upon Winsorization is "   , Math.min(28,LSC)   );
+        Results=Results.concat("<br>", "The firm was "   , (LDV) ? "":"not " ,"involved in labor controversies in the past year"   );
+        Results=Results.concat("<br>", "Judicial Efficacy Score is "  ,   LJE  );
+        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  ,    LogScore);
+
+        document.getElementById("Results").innerHTML=Results;
+        document.getElementById("Results").style.display='block';
+
+    }
+
+
+
+
+</script>
+
+<!--        let-->
+<!--        let-->
+<!--        let LJE=document.getElementById("LJE").value;-->
+<!--        let-->
+<!--        let-->
+<!--        let-->
+<!--        let-->
+<!--        let HQ=document.getElementById("HQ").value;-->
+<!--        let-->
+
+
+</body>
 </html>
