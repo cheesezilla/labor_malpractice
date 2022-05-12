@@ -3,246 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <title>Labor Controversy Risk</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"
+
+
 </head>
-<body>
+
+<body >
+<form id="formla">
+<div class="container-fluid" >
+
+    <div class="row" style="background-color:maroon; color:white; text-align: center">
+        <h2></h2>
+        <div class="col-md-12" >
+            <h1>
+               Labor Controversies Risk Calculator
+           </h1>
+
+        </div>
+         <h4></h4>
+    </div>
+
+    <div>
+        <h2></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+            <h4>
+                <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past year?<br>(1: Least Volatile, 5: Most Volatile) </label><br>
+                <input type="range"  class="form-range" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5" onchange="range()">
+                <div id="siaoeh">3</div>
+            </h4>
+        </div>
+            <div class="col-md-6" >
+
+            <h4>
+                <label for="LSC">Number of Controversies involving Direct Suppliers in past year</label><br>
+                <input type="number" id="LSC" name="LSC" value="10">  <br>
+
+            </h4>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+
+            <h4>
+                <label for="LDV">Was your firm involved in labor controversies in the past year?</label><br>
+                <select id="LDV" name="Sector">
+                    <option value=1>Yes</option>
+                    <option value=0>No</option>
+                </select><br>
+            </h4>
+        </div>
+        <div class="col-md-6" >
+
+            <h4>
+                <label for="LE">How many employees does your firm hire? </label><br>
+                <input type="number" id="LE" name="LE" value="100000" step="1" min="1" >  <br>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+            <h4>
+                <label for="LDI">How many days of inventory does your firm typically hold on average? </label><br>
+                <input type="number" id="LDI" name="LDI" step="0.00001" value="100" min="0" >  <br>
+            </h4>
+        </div>
+        <div class="col-md-6" >
+            <h4>
+                <label for="LSQCK">What was the quick ratio of your firm in the past year? </label><br>
+                <input type="number" id="LSQCK" name="LSQCK" step="0.00001" value="0.5"  min="0" >  <br>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+            <h4>
+                <label for="LSG">What was the overhead cost per employee in the past year? </label><br>
+                <input type="number" id="LSG" name="LSG" step="1" value="1000"  min="500" >  <br>
+            </h4>
+        </div>
+        <div class="col-md-6" >
+            <h4>
+                <label for="LOpMar">What was the operating margin of your firm in the past year? </label><br>
+                <input type="number" id="LOpMar" name="LOpMar" step="0.00001" value="0.5"  min="0" >  <br>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+            <h4>
+                <label for="Sector">Which of the following Industry Sectors most closely describes your company?</label><br>
+                <select id="Sector" name="Sector">
+                    <option value="1">Communication Services</option>
+                    <option value="2">Consumer Discretionary</option>
+                    <option value="3">Consumer Staples</option>
+                    <option value="4">Energy</option>
+                    <option value="5">Financials</option>
+                    <option value="6">Healthcare</option>
+                    <option value="7">Information Technology</option>
+                    <option value="8">Materials</option>
+                    <option value="9">Real Estate</option>
+                    <option value="10">Industrials</option>
+                </select><br>
+            </h4>
+
+        </div>
+        <div class="col-md-6" >
+        <h4>
+            <label for="HQ">Which of the following country is your company headquartered in?</label><br>
+            <select id="HQ" name="HQ" value=0>
+                <option value=0>	Others	</option>
+                <option value=1>Afghanistan</option>
+                <option value=2>Albania</option>
+                <option value=3>Algeria</option>
+                <option value=4>Angola</option>
+                <option value=5>Argentina</option>
+                <option value=6>Armenia</option>
+                <option value=7>Australia</option>
+                <option value=8>Austria</option>
+                <option value=9>Azerbaijan</option>
+                <option value=10>Bahrain</option>
+                <option value=11>Bangladesh </option>
+                <option value=12>Barbados</option>
+                <option value=13>Belarus</option>
+                <option value=14>Belgium</option>
+                <option value=15>Belize</option>
+                <option value=16>Benin</option>
+                <option value=17>Bhutan</option>
+                <option value=18>Bolivia</option>
+                <option value=19>Bosnia and Herzegovina</option>
+                <option value=20>Botswana</option>
+                <option value=21>Brazil</option>
+                <option value=22>Brunei Darussalam</option>
+                <option value=23>Bulgaria</option>
+                <option value=24>Burkina Faso</option>
+                <option value=25>Burma</option>
+                <option value=26>Burundi</option>
+                <option value=27>Cabo Verde</option>
+                <option value=28>Cambodia</option>
+                <option value=29>Cameroon</option>
+                <option value=30>Canada</option>
+                <option value=31>Central African Republic</option>
+                <option value=32>Chad</option>
+                <option value=33>Chile</option>
+                <option value=34>China</option>
+                <option value=35>Colombia</option>
+                <option value=36>Comoros</option>
+                <option value=37>Costa Rica</option>
+                <option value=38>CÃ´te d'Ivoire</option>
+                <option value=39>Croatia</option>
+                <option value=40>Cuba</option>
+                <option value=41>Cyprus</option>
+                <option value=42>Czech Republic</option>
+                <option value=43>Democratic Republic of Congo</option>
+                <option value=44>Denmark</option>
+                <option value=45>Djibouti</option>
+                <option value=46>Dominica</option>
+                <option value=47>Dominican Republic</option>
+                <option value=48>Ecuador</option>
+                <option value=49>Egypt</option>
+                <option value=50>El Salvador</option>
+                <option value=51>Equatorial Guinea</option>
+                <option value=52>Eritrea</option>
+                <option value=53>Estonia</option>
+                <option value=54>Eswatini</option>
+                <option value=55>Ethiopia</option>
+                <option value=56>Fiji</option>
+                <option value=57>Finland</option>
+                <option value=58>France</option>
+                <option value=59>Gabon</option>
+                <option value=60>Georgia</option>
+                <option value=61>Germany</option>
+                <option value=62>Ghana</option>
+                <option value=63>Greece</option>
+                <option value=64>Guatemala</option>
+                <option value=65>Guinea</option>
+                <option value=66>Guinea-Bissau</option>
+                <option value=67>Guyana</option>
+                <option value=68>Haiti</option>
+                <option value=69>Honduras</option>
+                <option value=70>Hungary</option>
+                <option value=71>Iceland</option>
+                <option value=72>India</option>
+                <option value=73>Indonesia</option>
+                <option value=74>Iran</option>
+                <option value=75>Iraq</option>
+                <option value=76>Ireland</option>
+                <option value=77>Israel</option>
+                <option value=78>Italy</option>
+                <option value=79>Jamaica</option>
+                <option value=80>Japan</option>
+                <option value=81>Jordan</option>
+                <option value=82>Kazakhstan</option>
+                <option value=83>Kenya</option>
+                <option value=84>Kiribati</option>
+                <option value=85>Kosovo</option>
+                <option value=86>Kuwait</option>
+                <option value=87>Kyrgyz Republic</option>
+                <option value=88>Laos</option>
+                <option value=89>Latvia</option>
+                <option value=90>Lebanon</option>
+                <option value=91>Lesotho</option>
+                <option value=92>Liberia</option>
+                <option value=93>Libya</option>
+                <option value=94>Lithuania</option>
+                <option value=95>Luxembourg</option>
+                <option value=96>Madagascar</option>
+                <option value=97>Malawi</option>
+                <option value=98>Malaysia</option>
+                <option value=99>Maldives</option>
+                <option value=100>Mali</option>
+                <option value=101>Malta</option>
+                <option value=102>Mauritania</option>
+                <option value=103>Mauritius</option>
+                <option value=104>Mexico</option>
+                <option value=105>Micronesia</option>
+                <option value=106>Moldova</option>
+                <option value=107>Mongolia</option>
+                <option value=108>Montenegro</option>
+                <option value=109>Morocco</option>
+                <option value=110>Mozambique</option>
+                <option value=111>Namibia</option>
+                <option value=112>Nepal</option>
+                <option value=113>Netherlands</option>
+                <option value=114>New Zealand</option>
+                <option value=115>Nicaragua</option>
+                <option value=116>Niger</option>
+                <option value=117>Nigeria</option>
+                <option value=118>North Korea</option>
+                <option value=119>North Macedonia</option>
+                <option value=120>Norway</option>
+                <option value=121>Oman</option>
+                <option value=122>Pakistan</option>
+                <option value=123>Panama</option>
+                <option value=124>Papua New Guinea</option>
+                <option value=125>Paraguay</option>
+                <option value=126>Peru</option>
+                <option value=127>Philippines</option>
+                <option value=128>Poland</option>
+                <option value=129>Portugal</option>
+                <option value=130>Qatar</option>
+                <option value=131>Republic of Congo</option>
+                <option value=132>Romania</option>
+                <option value=133>Russia</option>
+                <option value=134>Rwanda</option>
+                <option value=135>Saint Lucia</option>
+                <option value=136>Saint Vincent and the Grenadines</option>
+                <option value=137>Samoa</option>
+                <option value=138>SÃ£o TomÃ© and PrÃ­ncipe</option>
+                <option value=139>Saudi Arabia</option>
+                <option value=140>Senegal</option>
+                <option value=141>Serbia </option>
+                <option value=142>Seychelles</option>
+                <option value=143>Sierra Leone</option>
+                <option value=144>Singapore</option>
+                <option value=145>Slovak Republic</option>
+                <option value=146>Slovenia</option>
+                <option value=147>Solomon Islands</option>
+                <option value=148>Somalia</option>
+                <option value=149>South Africa</option>
+                <option value=150>South Korea</option>
+                <option value=151>Spain</option>
+                <option value=152>Sri Lanka</option>
+                <option value=153>Sudan</option>
+                <option value=154>Suriname</option>
+                <option value=155>Sweden</option>
+                <option value=156>Switzerland</option>
+                <option value=157>Syria</option>
+                <option value=158>Taiwan</option>
+                <option value=159>Tajikistan</option>
+                <option value=160>Tanzania</option>
+                <option value=161>Thailand</option>
+                <option value=162>The Bahamas</option>
+                <option value=163>The Gambia</option>
+                <option value=164>Timor-Leste</option>
+                <option value=165>Togo</option>
+                <option value=166>Tonga</option>
+                <option value=167>Trinidad and Tobago</option>
+                <option value=168>Tunisia</option>
+                <option value=169>Turkey</option>
+                <option value=170>Turkmenistan</option>
+                <option value=171>Uganda</option>
+                <option value=172>Ukraine</option>
+                <option value=173>United Arab Emirates</option>
+                <option value=174>United Kingdom</option>
+                <option value=175>United States</option>
+                <option value=176>Uruguay</option>
+                <option value=177>Uzbekistan</option>
+                <option value=178>Vanuatu</option>
+                <option value=179>Venezuela</option>
+                <option value=180>Vietnam</option>
+                <option value=181>Yemen</option>
+            </select><br><br>
+        </h4>
+        </div>
+    </div>
+    <div>
+    </div>
+    <button type="submit"> Submit</button>
+    <div><h2>
+
+    </h2> </div>
+    <div id="Box" >
+        <div>
+            <h4 id="Results" style="display:none">
+                Results
+            </h4>
+            <h4 id="Weblink" style="display:none">
+                For more information on the methodology and theoretical motivation, visit <a href="https://www.niyazitaneri.com/">niyazitaneri.com</a>
+            </h4>
+        </div>
+
+    </div>
+
+</div>
+</form>
 
 
-<h1>Labor Controversies Calculator</h1>
-
-    <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past year?<br>(1: Least Volatile, 5: Most Volatile) </label><br>
-    <input type="number" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5">  <br>
-
-    <label for="LSC">Number of Controversies involving Direct Suppliers in past year</label><br>
-    <input type="number" id="LSC" name="LSC" value="0">  <br>
-
-    <label for="LDV">Was your firm involved in labor controversies in the past year?</label><br>
-    <select id="LDV" name="Sector">
-        <option value=0>No</option>
-        <option value=1>Yes</option>
-    </select><br>
-
-    <label for="LE">How many employees does your firm hire? </label><br>
-    <input type="number" id="LE" name="LE" value="100" step="1" min="1" >  <br>
-
-    <label for="LDI">How many days of inventory does your firm typically hold on average? </label><br>
-    <input type="number" id="LDI" name="LDI" step="0.00001" value="100" min="0" >  <br>
-
-    <label for="LSQCK">What was the quick ratio of your firm in the past year? </label><br>
-    <input type="number" id="LSQCK" name="LSQCK" step="0.00001" value="0.5"  min="0" >  <br>
-
-
-    <label for="LSG">What was the overhead cost per employee in the past year? </label><br>
-    <input type="number" id="LSG" name="LSG" step="1" value="1000"  min="500" >  <br>
-
-    <label for="LOpMar">What was the operating margin of your firm in the past year? </label><br>
-    <input type="number" id="LOpMar" name="LOpMar" step="0.00001" value="0.5"  min="0" >  <br>
-
-    <label for="Sector">Which of the following Industry Sectors most closely describes your company?</label><br>
-    <select id="Sector" name="Sector">
-        <option value="1">Communication Services</option>
-        <option value="2">Consumer Discretionary</option>
-        <option value="3">Consumer Staples</option>
-        <option value="4">Energy</option>
-        <option value="5">Financials</option>
-        <option value="6">Healthcare</option>
-        <option value="7">Information Technology</option>
-        <option value="8">Materials</option>
-        <option value="9">Real Estate</option>
-        <option value="10">Industrials</option>
-    </select><br>
-
-    <label for="HQ">Which of the following country is your company headquartered in?</label><br>
-    <select id="HQ" name="HQ" value=0>
-        <option value=0>	Others	</option>
-        <option value=1>Afghanistan</option>
-        <option value=2>Albania</option>
-        <option value=3>Algeria</option>
-        <option value=4>Angola</option>
-        <option value=5>Argentina</option>
-        <option value=6>Armenia</option>
-        <option value=7>Australia</option>
-        <option value=8>Austria</option>
-        <option value=9>Azerbaijan</option>
-        <option value=10>Bahrain</option>
-        <option value=11>Bangladesh </option>
-        <option value=12>Barbados</option>
-        <option value=13>Belarus</option>
-        <option value=14>Belgium</option>
-        <option value=15>Belize</option>
-        <option value=16>Benin</option>
-        <option value=17>Bhutan</option>
-        <option value=18>Bolivia</option>
-        <option value=19>Bosnia and Herzegovina</option>
-        <option value=20>Botswana</option>
-        <option value=21>Brazil</option>
-        <option value=22>Brunei Darussalam</option>
-        <option value=23>Bulgaria</option>
-        <option value=24>Burkina Faso</option>
-        <option value=25>Burma</option>
-        <option value=26>Burundi</option>
-        <option value=27>Cabo Verde</option>
-        <option value=28>Cambodia</option>
-        <option value=29>Cameroon</option>
-        <option value=30>Canada</option>
-        <option value=31>Central African Republic</option>
-        <option value=32>Chad</option>
-        <option value=33>Chile</option>
-        <option value=34>China</option>
-        <option value=35>Colombia</option>
-        <option value=36>Comoros</option>
-        <option value=37>Costa Rica</option>
-        <option value=38>CÃ´te d'Ivoire</option>
-        <option value=39>Croatia</option>
-        <option value=40>Cuba</option>
-        <option value=41>Cyprus</option>
-        <option value=42>Czech Republic</option>
-        <option value=43>Democratic Republic of Congo</option>
-        <option value=44>Denmark</option>
-        <option value=45>Djibouti</option>
-        <option value=46>Dominica</option>
-        <option value=47>Dominican Republic</option>
-        <option value=48>Ecuador</option>
-        <option value=49>Egypt</option>
-        <option value=50>El Salvador</option>
-        <option value=51>Equatorial Guinea</option>
-        <option value=52>Eritrea</option>
-        <option value=53>Estonia</option>
-        <option value=54>Eswatini</option>
-        <option value=55>Ethiopia</option>
-        <option value=56>Fiji</option>
-        <option value=57>Finland</option>
-        <option value=58>France</option>
-        <option value=59>Gabon</option>
-        <option value=60>Georgia</option>
-        <option value=61>Germany</option>
-        <option value=62>Ghana</option>
-        <option value=63>Greece</option>
-        <option value=64>Guatemala</option>
-        <option value=65>Guinea</option>
-        <option value=66>Guinea-Bissau</option>
-        <option value=67>Guyana</option>
-        <option value=68>Haiti</option>
-        <option value=69>Honduras</option>
-        <option value=70>Hungary</option>
-        <option value=71>Iceland</option>
-        <option value=72>India</option>
-        <option value=73>Indonesia</option>
-        <option value=74>Iran</option>
-        <option value=75>Iraq</option>
-        <option value=76>Ireland</option>
-        <option value=77>Israel</option>
-        <option value=78>Italy</option>
-        <option value=79>Jamaica</option>
-        <option value=80>Japan</option>
-        <option value=81>Jordan</option>
-        <option value=82>Kazakhstan</option>
-        <option value=83>Kenya</option>
-        <option value=84>Kiribati</option>
-        <option value=85>Kosovo</option>
-        <option value=86>Kuwait</option>
-        <option value=87>Kyrgyz Republic</option>
-        <option value=88>Laos</option>
-        <option value=89>Latvia</option>
-        <option value=90>Lebanon</option>
-        <option value=91>Lesotho</option>
-        <option value=92>Liberia</option>
-        <option value=93>Libya</option>
-        <option value=94>Lithuania</option>
-        <option value=95>Luxembourg</option>
-        <option value=96>Madagascar</option>
-        <option value=97>Malawi</option>
-        <option value=98>Malaysia</option>
-        <option value=99>Maldives</option>
-        <option value=100>Mali</option>
-        <option value=101>Malta</option>
-        <option value=102>Mauritania</option>
-        <option value=103>Mauritius</option>
-        <option value=104>Mexico</option>
-        <option value=105>Micronesia</option>
-        <option value=106>Moldova</option>
-        <option value=107>Mongolia</option>
-        <option value=108>Montenegro</option>
-        <option value=109>Morocco</option>
-        <option value=110>Mozambique</option>
-        <option value=111>Namibia</option>
-        <option value=112>Nepal</option>
-        <option value=113>Netherlands</option>
-        <option value=114>New Zealand</option>
-        <option value=115>Nicaragua</option>
-        <option value=116>Niger</option>
-        <option value=117>Nigeria</option>
-        <option value=118>North Korea</option>
-        <option value=119>North Macedonia</option>
-        <option value=120>Norway</option>
-        <option value=121>Oman</option>
-        <option value=122>Pakistan</option>
-        <option value=123>Panama</option>
-        <option value=124>Papua New Guinea</option>
-        <option value=125>Paraguay</option>
-        <option value=126>Peru</option>
-        <option value=127>Philippines</option>
-        <option value=128>Poland</option>
-        <option value=129>Portugal</option>
-        <option value=130>Qatar</option>
-        <option value=131>Republic of Congo</option>
-        <option value=132>Romania</option>
-        <option value=133>Russia</option>
-        <option value=134>Rwanda</option>
-        <option value=135>Saint Lucia</option>
-        <option value=136>Saint Vincent and the Grenadines</option>
-        <option value=137>Samoa</option>
-        <option value=138>SÃ£o TomÃ© and PrÃ­ncipe</option>
-        <option value=139>Saudi Arabia</option>
-        <option value=140>Senegal</option>
-        <option value=141>Serbia </option>
-        <option value=142>Seychelles</option>
-        <option value=143>Sierra Leone</option>
-        <option value=144>Singapore</option>
-        <option value=145>Slovak Republic</option>
-        <option value=146>Slovenia</option>
-        <option value=147>Solomon Islands</option>
-        <option value=148>Somalia</option>
-        <option value=149>South Africa</option>
-        <option value=150>South Korea</option>
-        <option value=151>Spain</option>
-        <option value=152>Sri Lanka</option>
-        <option value=153>Sudan</option>
-        <option value=154>Suriname</option>
-        <option value=155>Sweden</option>
-        <option value=156>Switzerland</option>
-        <option value=157>Syria</option>
-        <option value=158>Taiwan</option>
-        <option value=159>Tajikistan</option>
-        <option value=160>Tanzania</option>
-        <option value=161>Thailand</option>
-        <option value=162>The Bahamas</option>
-        <option value=163>The Gambia</option>
-        <option value=164>Timor-Leste</option>
-        <option value=165>Togo</option>
-        <option value=166>Tonga</option>
-        <option value=167>Trinidad and Tobago</option>
-        <option value=168>Tunisia</option>
-        <option value=169>Turkey</option>
-        <option value=170>Turkmenistan</option>
-        <option value=171>Uganda</option>
-        <option value=172>Ukraine</option>
-        <option value=173>United Arab Emirates</option>
-        <option value=174>United Kingdom</option>
-        <option value=175>United States</option>
-        <option value=176>Uruguay</option>
-        <option value=177>Uzbekistan</option>
-        <option value=178>Vanuatu</option>
-        <option value=179>Venezuela</option>
-        <option value=180>Vietnam</option>
-        <option value=181>Yemen</option>
-
-    </select><br><br>
-
-
-    <button id="submit" onclick="myFunction()"  value="Submit">Submit</button>
-
-
-<p id="Results" style="display:none">Results</p>
 <script>
     var  HQCoeff= {
             0:52.4,
@@ -428,10 +507,13 @@
             180:51.3,
             181:16.5
     };
-    // var LogScore=0;
-    function myFunction(){
+    var form = document.forms["formla"];
+	form.addEventListener('submit',myFunction,false);
+    var LogScore=0;
+    function myFunction(e){
+        e.preventDefault()
         var LDU4=document.getElementById("LDU4").value;
-        var LSC=document.getElementById("LSC").value;
+        var LSC=Math.min(28,document.getElementById("LSC").value);
         var LDV=document.getElementById("LDV").value;
         var LE=Math.log(document.getElementById("LE").value);
         var LSQCK=document.getElementById("LSQCK").value;
@@ -441,35 +523,32 @@
         var Sector=document.getElementById("Sector").value;
         var HQ=document.getElementById("HQ").value;
         var LJE=HQCoeff[HQ];
-        var Year=2022;
-        var Product=LDU4*0.001+LSC*0.002+LDV*0.003+LE*0.004+LJE*0.005+LDI*0.006+LSQCK*0.007+LSG*0.008+LOpMar*0.009+Year*0+0.0011;
-        var LogScore=1/(1+Math.exp(-Product)) ;
-        var Results="Displaying the Results now: Volatility is".concat(" ",LDU4,"/5" );
+        Year=2022;
+        Product=(LDU4-0.5)*2*0.0571+LSC*0.0742+LDV*1.614+LE*0.643+LJE*0.0228+LDI*(-0.00265)+LSQCK*(-1.6)+LSG*0.00000223+LOpMar*0.229+Year*-.139+269.5;
+        LogScore=1/(1+Math.exp(-Product)) ;
+        Results="Displaying the Results now: Volatility is".concat(" ",LDU4,"/5" );
         Results=Results.concat("<br>", "Supplier Controversies, upon Winsorization is "   , Math.min(28,LSC)   );
-        Results=Results.concat("<br>", "The firm was "   , (LDV) ? "":"not " ,"involved in labor controversies in the past year"   );
+        Results=Results.concat("<br>", "The firm was "   , (LDV>0) ? "":"not " ,"involved in labor controversies in the past year"   );
         Results=Results.concat("<br>", "Judicial Efficacy Score is "  ,   LJE  );
-        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  ,    LogScore);
-
+        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  , "<b>",LogScore.toFixed(3), "</b>");
         document.getElementById("Results").innerHTML=Results;
         document.getElementById("Results").style.display='block';
 
+        document.getElementById("Weblink").style.display='block';
+        document.getElementById("Box").style="border-style:solid; border-color:maroon;"
+
+
+
+    }
+     function range() {
+      var x = document.getElementById("LDU4").value;
+      document.getElementById("siaoeh").innerHTML = x;
     }
 
 
 
 
 </script>
-
-<!--        let-->
-<!--        let-->
-<!--        let LJE=document.getElementById("LJE").value;-->
-<!--        let-->
-<!--        let-->
-<!--        let-->
-<!--        let-->
-<!--        let HQ=document.getElementById("HQ").value;-->
-<!--        let-->
-
 
 </body>
 </html>
