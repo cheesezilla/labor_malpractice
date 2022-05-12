@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Labor Controversy Risk</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 </head>
 
 <body >
@@ -29,9 +31,32 @@
     <div class="row">
         <div class="col-md-6" >
             <h4>
-                <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past year?<br>(1: Least Volatile, 5: Most Volatile) </label><br>
-                <input type="range"  class="form-range" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5" onchange="range()">
-                <div id="siaoeh">3</div>
+                <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past
+                    year?<br></label><br>
+                <!--                (1: Least Volatile, 5: Most Volatile) -->
+                <!--                <input type="range"  class="form-range" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5" onchange="range()">-->
+                <!--                <div id="siaoeh">3</div>-->
+                <div class="btn-group" id="siaoeh" data-toggle="buttons">
+                    <div>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                               value=1 checked>
+                        <label class="form-check-label" for="inlineRadio1">1 (Least Volatile)</label>
+                    </div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value=2>
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                    <div>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                               value=3>
+                        <label class="form-check-label" for="inlineRadio3">3</label>
+                    </div>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value=4>
+                    <label class="form-check-label" for="inlineRadio3">4</label>
+                    <div>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5"
+                               value=5>
+                        <label class="form-check-label" for="inlineRadio3">5 (Most Volatile)</label>
+                    </div>
+                </div>
             </h4>
         </div>
             <div class="col-md-6" >
@@ -512,7 +537,8 @@
     var LogScore=0;
     function myFunction(e){
         e.preventDefault()
-        var LDU4=document.getElementById("LDU4").value;
+        var LDU4 = $('#siaoeh input:radio:checked').val()
+        // var LDU4=document.getElementById("LDU4").value;
         var LSC=Math.min(28,document.getElementById("LSC").value);
         var LDV=document.getElementById("LDV").value;
         var LE=Math.log(document.getElementById("LE").value);
