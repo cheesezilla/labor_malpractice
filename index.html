@@ -578,7 +578,7 @@
         Results=Results.concat("<br>", "Supplier Controversies, upon Winsorization is "   , Math.min(28,LSC)   );
         Results=Results.concat("<br>", "The firm was "   , (LDV>0) ? "":"not " ,"involved in labor controversies in the past year"   );
         Results=Results.concat("<br>", "Judicial Efficacy Score is "  ,   LJE  );
-        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  ,    LogScore);
+        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is ", "<b>",LogScore.toFixed(3), "</b>");
         document.getElementById("Results").innerHTML=Results;
         document.getElementById("Results").style.display='block';
 
