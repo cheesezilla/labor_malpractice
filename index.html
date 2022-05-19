@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <title>Labor Controversy Risk</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body >
@@ -31,19 +30,16 @@
     <div class="row">
         <div class="col-md-6" >
             <h4>
-                <h4>
                 <label for="LDU4">On a scale of 1 to 5, how volatile would you rate the sales of your firm in the past year?<br>(1: Least Volatile, 5: Most Volatile) </label><br>
                 <input type="range"  class="form-range" id="LDU4" name="LDU4" value="3" step="1" min="1" max="5" onchange="range()">
                 <div id="siaoeh">3</div>
-            </h4>
             </h4>
         </div>
             <div class="col-md-6" >
 
             <h4>
-                <label for="LSC">Number of Controversies involving Direct Suppliers in past year</label><br>
-                <input type="number" id="LSC" name="LSC" value="10">  <br>
-
+                <label for="LSC" >Number of Controversies involving Direct Suppliers in past year </label><br>
+                <input type="number" id="LSC" name="LSC" value=""> <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="This is measured by the number of Environmental, Health and Safety Controversies as well as Wages and Working Conditions Controversies involving direct suppliers. We recommend accessing the Refinitiv ESG database for this item.">?</button>
             </h4>
         </div>
 
@@ -63,21 +59,25 @@
 
             <h4>
                 <label for="LE">How many employees does your firm hire? </label><br>
-                <input type="number" id="LE" name="LE" value="100000" step="1" min="1" >  <br>
+                <input type="number" id="LE" name="LE" value="" step="1" min="1" >  <br>
             </h4>
+
         </div>
     </div>
     <div class="row">
         <div class="col-md-6" >
             <h4>
-                <label for="LDI">How many days of inventory does your firm typically hold on average? </label><br>
-                <input type="number" id="LDI" name="LDI" step="0.00001" value="100" min="0" >  <br>
+                <label for="LDI">How many days of inventory does your firm typically hold on average? </label>
+                           <br>
+                <input type="number" id="LDI" name="LDI" step="0.00001" value="" min="0" > <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="This is measured as 365 x Year-on-Year Average Inventory/ Cost of Goods Sold in the past year.">?</button>
             </h4>
         </div>
         <div class="col-md-6" >
             <h4>
                 <label for="LSQCK">What was the quick ratio of your firm in the past year? </label><br>
-                <input type="number" id="LSQCK" name="LSQCK" step="0.00001" value="0.5"  min="0" >  <br>
+                <input type="number" id="LSQCK" name="LSQCK" step="0.0000001" value=""  min="0" >
+                <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="This is measured as the Total Current Assets Less Inventory Divided by Total Current Liabilities.">?</button>
+                <br>
             </h4>
         </div>
     </div>
@@ -85,13 +85,17 @@
         <div class="col-md-6" >
             <h4>
                 <label for="LSG">What was the overhead cost per employee in the past year? </label><br>
-                <input type="number" id="LSG" name="LSG" step="1" value="1000"  min="500" >  <br>
+                <input type="number" id="LSG" name="LSG" step="0.0000001" value=""  min="500" >
+                <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="This is measured as the Sales and General Administrative cost divided by the number of employees in the past year.">?</button>
+                <br>
             </h4>
         </div>
         <div class="col-md-6" >
             <h4>
                 <label for="LOpMar">What was the operating margin of your firm in the past year? </label><br>
-                <input type="number" id="LOpMar" name="LOpMar" step="0.00001" value="0.5"  min="0" >  <br>
+                <input type="number" id="LOpMar" name="LOpMar" step="0.0000001" value=""  min="0" >
+                <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="This is measured as the Operating Income divided by the Total Revenue in the past year.">?</button>
+                 <br>
             </h4>
         </div>
     </div>
@@ -110,7 +114,9 @@
                     <option value="8">Materials</option>
                     <option value="9">Real Estate</option>
                     <option value="10">Industrials</option>
-                </select><br>
+                </select>
+                <button type="button" class="btn btn-light"  data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="If any of the fields are left empty, the Sector median will automatically be filled for you.">?</button>
+                <br>
             </h4>
 
         </div>
@@ -156,7 +162,7 @@
                 <option value=35>Colombia</option>
                 <option value=36>Comoros</option>
                 <option value=37>Costa Rica</option>
-                <option value=38>CÃ´te d'Ivoire</option>
+                <option value=38>Cote d'Ivoire</option>
                 <option value=39>Croatia</option>
                 <option value=40>Cuba</option>
                 <option value=41>Cyprus</option>
@@ -256,7 +262,7 @@
                 <option value=135>Saint Lucia</option>
                 <option value=136>Saint Vincent and the Grenadines</option>
                 <option value=137>Samoa</option>
-                <option value=138>SÃ£o TomÃ© and PrÃ­ncipe</option>
+                <option value=138>Sao Tome Island</option>
                 <option value=139>Saudi Arabia</option>
                 <option value=140>Senegal</option>
                 <option value=141>Serbia </option>
@@ -316,7 +322,7 @@
                 Results
             </h4>
             <h4 id="Weblink">
-                For more information on the methodology and theoretical motivation, visit <a href="https://www.niyazitaneri.com/" target="_blank">niyazitaneri.com</a>
+                For more information on the methodology and theoretical motivation, visit <a href="https://www.niyazitaneri.com/">niyazitaneri.com</a>
             </h4>
         </div>
 
@@ -511,21 +517,58 @@
             180:51.3,
             181:16.5
     };
+    var MEDIANS={
+        1	:	[	0	,	8.858357	,	19.71979	,	1.07538	,	69447.74	,	0.1072574	],
+        2	:	[	0	,	10.34174	,	58.86703	,	1.0037	,	48449.97	,	0.0742967	],
+        3	:	[	0	,	10.54534	,	55.58179	,	0.766915	,	66298.91	,	0.0950928	],
+        4	:	[	0	,	8.841663	,	32.05824	,	1.039915	,	75616.3	,	0.0870732	],
+        5	:	[	0	,	8.507065	,	123.1091	,	0.682625	,	30337.07	,	0.2460035	],
+        6	:	[	0	,	9.668777	,	129.7318	,	1.36473	,	90505.05	,	0.1558956	],
+        7	:	[	0	,	9.903487	,	60.34718	,	1.691745	,	35120.05	,	0.0909237	],
+        8	:	[	0	,	9.542302	,	74.56112	,	1.05674	,	37895.83	,	0.0796917	],
+        9	:	[	0	,	10.39293	,	85.62411	,	0.74828	,	31298.38	,	0.0542488	],
+        10	:	[	0	,	10.15852	,	60.66932	,	1.02652	,	30157.01	,	0.075158	]
+    };
     var form = document.forms["formla"];
 	form.addEventListener('submit',myFunction,false);
     var LogScore=0;
     function myFunction(e){
         e.preventDefault()
-        // var LDU4 = $('#siaoeh input:radio:checked').val() //for bootstrap radio buttons
         var LDU4=document.getElementById("LDU4").value;
-        var LSC=Math.min(28,document.getElementById("LSC").value);
-        var LDV=document.getElementById("LDV").value;
-        var LE=Math.log(document.getElementById("LE").value);
-        var LSQCK=document.getElementById("LSQCK").value;
-        var LDI=document.getElementById("LDI").value;
-        var LSG=document.getElementById("LSG").value;
-        var LOpMar=document.getElementById("LOpMar").value;
         var Sector=document.getElementById("Sector").value;
+        var LSC=document.getElementById("LSC").value;
+        if (LSC==""){
+            LSC=MEDIANS[Sector][0]
+            document.getElementById("LSC").value=LSC
+        };
+        var LSC=Math.min(28,LSC);
+        var LDV=document.getElementById("LDV").value;
+        var LE=document.getElementById("LE").value;
+        if (LE==""){
+            LE=Math.ceil(Math.exp( MEDIANS[Sector][1] ))
+            document.getElementById("LE").value=LE
+        };
+        LE=Math.log(LE);
+        var LDI=document.getElementById("LDI").value;
+        if (LDI==""){
+            LDI=MEDIANS[Sector][2]
+            document.getElementById("LDI").value=LDI
+        };
+        var LSQCK=document.getElementById("LSQCK").value;
+        if (LSQCK==""){
+            LSQCK=MEDIANS[Sector][3]
+            document.getElementById("LSQCK").value=LSQCK
+        };
+        var LSG=document.getElementById("LSG").value;
+        if (LSG==""){
+            LSG=MEDIANS[Sector][4]
+            document.getElementById("LSG").value=LSG
+        };
+        var LOpMar=document.getElementById("LOpMar").value;
+         if (LOpMar==""){
+            LOpMar=MEDIANS[Sector][5]
+            document.getElementById("LOpMar").value=LOpMar
+        };
         var HQ=document.getElementById("HQ").value;
         var LJE=HQCoeff[HQ];
         Year=2022;
@@ -535,7 +578,7 @@
         Results=Results.concat("<br>", "Supplier Controversies, upon Winsorization is "   , Math.min(28,LSC)   );
         Results=Results.concat("<br>", "The firm was "   , (LDV>0) ? "":"not " ,"involved in labor controversies in the past year"   );
         Results=Results.concat("<br>", "Judicial Efficacy Score is "  ,   LJE  );
-        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  , "<b>",LogScore.toFixed(3), "</b>");
+        Results=Results.concat("<br>", "Factoring other variables as well, probability of involvement in labor controversy is "  ,    LogScore);
         document.getElementById("Results").innerHTML=Results;
         document.getElementById("Results").style.display='block';
 
@@ -544,12 +587,15 @@
 
 
 
-    }
+    };
      function range() {
       var x = document.getElementById("LDU4").value;
       document.getElementById("siaoeh").innerHTML = x;
-    }
 
+    };
+    $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+    });
 
 
 
